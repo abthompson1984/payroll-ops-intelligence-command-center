@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payroll Ops Intelligence Command Center</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Strategic Initiatives Simulation</p>
+        <h1>Payroll Ops Intelligence Command Center</h1>
+      </div>
+      <div class="header-actions">
+        <span class="mode-pill">Mock Mode</span>
+        <button id="exportBriefBtn" class="button primary" type="button">Export Brief</button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="scenario-band">
+        <div>
+          <h2>Scenario</h2>
+          <p>
+            A high-growth embedded payroll partner is seeing more payroll blockers, tax notice escalations,
+            and manual interventions. Leadership needs a clear diagnosis, a sequenced fix plan, and an
+            operating model that can scale beyond heroics.
+          </p>
+        </div>
+        <div class="scenario-stats" aria-label="Scenario summary">
+          <div>
+            <strong>212</strong>
+            <span>payroll runs reviewed</span>
+          </div>
+          <div>
+            <strong>43</strong>
+            <span>open operational issues</span>
+          </div>
+          <div>
+            <strong>18%</strong>
+            <span>manual intervention rate</span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Workspace sections">
+        <button class="tab active" data-view="command" type="button">Command Center</button>
+        <button class="tab" data-view="queue" type="button">Work Queue</button>
+        <button class="tab" data-view="triage" type="button">Run Triage</button>
+        <button class="tab" data-view="brief" type="button">Strategic Brief</button>
+        <button class="tab" data-view="operating-model" type="button">Operating Model</button>
+      </nav>
+
+      <section id="command" class="view active">
+        <div class="metric-grid" id="metricGrid"></div>
+        <div class="two-column">
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Root Cause Agent</p>
+                <h2>Issue Mix</h2>
+              </div>
+              <span class="freshness">Synthetic data</span>
+            </div>
+            <canvas id="issueChart" width="680" height="260" aria-label="Issue mix chart"></canvas>
+          </section>
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">MBR Dashboard</p>
+                <h2>Operating Trend</h2>
+              </div>
+              <span class="freshness">Last 8 weeks</span>
+            </div>
+            <canvas id="trendChart" width="680" height="260" aria-label="Operating trend chart"></canvas>
+          </section>
+        </div>
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Recommendation</p>
+              <h2>What Actually Matters</h2>
+            </div>
+          </div>
+          <div id="priorityList" class="priority-list"></div>
+        </section>
+      </section>
+
+      <section id="queue" class="view">
+        <div class="split-layout">
+          <aside class="filter-panel">
+            <h2>Filters</h2>
+            <label>
+              Severity
+              <select id="severityFilter">
+                <option value="all">All</option>
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+              </select>
+            </label>
+            <label>
+              Owner
+              <select id="ownerFilter">
+                <option value="all">All</option>
+                <option value="Ops">Ops</option>
+                <option value="Product">Product</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Risk">Risk</option>
+              </select>
+            </label>
+          </aside>
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">AI-Classified</p>
+                <h2>Operational Work Queue</h2>
+              </div>
+              <button id="sortQueueBtn" class="button secondary" type="button">Sort by Impact</button>
+            </div>
+            <div id="workQueue" class="queue"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="triage" class="view">
+        <div class="three-column">
+          <section class="panel span-two">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Payroll Risk Triage Agent</p>
+                <h2>Run Approval Review</h2>
+              </div>
+              <select id="runSelector" aria-label="Select payroll run"></select>
+            </div>
+            <div id="runSummary" class="run-summary"></div>
+            <div id="triageFindings" class="finding-list"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Follow-Up</p>
+                <h2>Ask the Agent</h2>
+              </div>
+            </div>
+            <div id="chatLog" class="chat-log"></div>
+            <div class="quick-prompts">
+              <button class="prompt-chip" data-question="Why should this run be paused?" type="button">Why pause?</button>
+              <button class="prompt-chip" data-question="Draft a partner-facing update." type="button">Partner update</button>
+              <button class="prompt-chip" data-question="What data should ops inspect first?" type="button">First checks</button>
+            </div>
+            <form id="chatForm" class="chat-form">
+              <input id="chatInput" type="text" placeholder="Ask about the selected run" autocomplete="off" />
+              <button class="button primary" type="submit">Ask</button>
+            </form>
+          </section>
+        </div>
+      </section>
+
+      <section id="brief" class="view">
+        <section class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Strategic Brief Generator</p>
+              <h2>Executive Recommendation</h2>
+            </div>
+            <button id="refreshBriefBtn" class="button secondary" type="button">Regenerate</button>
+          </div>
+          <article id="briefContent" class="brief"></article>
+        </section>
+      </section>
+
+      <section id="operating-model" class="view">
+        <div class="two-column">
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Workflow Design</p>
+                <h2>Target Operating Model</h2>
+              </div>
+            </div>
+            <div id="workflowSteps" class="workflow"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Durable Process</p>
+                <h2>SOP Draft</h2>
+              </div>
+            </div>
+            <div id="sopList" class="sop"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
