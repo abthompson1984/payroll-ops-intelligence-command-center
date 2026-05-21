@@ -1,83 +1,89 @@
 # Payroll Ops Intelligence Command Center
 
-A one-day MVP showcase for a Strategic Initiatives Principal role at Check.
+An MVP showcase for strategic operations, embedded payroll problem-solving, AI-assisted workflow design, and executive operating discipline.
 
-This is a mock, synthetic-data simulation of an AI-first operating system for ambiguous embedded payroll operations problems. It demonstrates how I would go from messy operational signal to root-cause analysis, workflow design, executive recommendation, and durable operating model.
+This prototype was built for a **Strategic Initiatives Principal** style role in an embedded payroll environment: the person responsible for taking ambiguous operational problems, finding the root cause, aligning cross-functional owners, designing the workflow, and turning repeated manual effort into a scalable operating model.
+
+The product is intentionally not a generic dashboard or chatbot. It is a compact simulation of how a strategic operator could use AI-first workflow design to move from messy operational signals to owned work, payroll risk controls, executive recommendations, and a durable target operating model.
+
+## Live Demo
+
+View the MVP:
+
+```text
+https://abthompson1984.github.io/payroll-ops-intelligence-command-center/
+```
 
 ## Why This Exists
 
-The Strategic Initiatives Principal role calls for someone who can get deep into the mechanics of a problem, simplify ambiguity, work across ops/product/engineering/revenue, deploy AI into operating workflows, and turn hard problems into scalable systems.
+Embedded payroll operations are high-stakes because small configuration, tax, onboarding, or funding issues can quickly become partner escalations, payroll blockers, manual intervention, and customer trust risk.
 
-This demo is built around that exact pattern:
+The harder problem is rarely just seeing that something is wrong. The harder problem is creating a repeatable operating rhythm:
 
-1. Ingest operational signals from payroll runs, support tickets, tax notices, onboarding status, and configuration changes.
-2. Classify root causes and distinguish blockers from warnings.
-3. Generate an action queue with owners, impact, and recommended next steps.
-4. Produce an executive brief and target operating model.
-5. Track the initiative through an MBR-style dashboard.
+- Which issues are true payroll blockers versus warnings?
+- Which root causes are product defects, partner readiness gaps, workflow failures, or configuration issues?
+- Who owns the next action?
+- Which risks need escalation before payroll approval?
+- What should leadership know this week?
+- How does the organization turn the fix into a process instead of another one-off rescue?
 
-## Demo Scenario
+The Payroll Ops Intelligence Command Center turns that ambiguity into a structured operating system.
 
-A high-growth embedded payroll partner is seeing rising payroll blockers, tax notice escalations, and manual interventions. Leadership needs a clear diagnosis, a sequenced fix plan, and an operating model that can scale beyond heroics.
+## What The MVP Demonstrates
 
-The app simulates how I would structure the problem and build the first version of an AI-assisted workflow to attack it.
-
-## What It Shows
-
-- **Command Center:** initiative-level metrics, root-cause mix, and weekly operating trend.
-- **Work Queue:** AI-classified operational issues with severity, owner, source, impact, root cause, and recommendation.
-- **Run Triage:** mock payroll approval review that flags blockers and warnings before approval.
-- **Follow-Up Agent:** deterministic mock Q&A for explaining risk, drafting partner updates, and guiding first checks.
+- **Command Center:** initiative-level metrics, root-cause mix, weekly operating trend, and executive visibility.
+- **Work Queue:** AI-classified operational issues with severity, source, owner, impact, root cause, and recommended action.
+- **Run Triage:** payroll approval review that separates blockers from warnings before payroll moves.
+- **Follow-Up Agent:** deterministic mock Q&A for risk explanation, partner updates, first checks, and escalation guidance.
 - **Strategic Brief:** generated problem statement, quantified impact, root causes, recommendation, and 30-day plan.
-- **Operating Model:** draft workflow and SOP for making the process durable.
+- **Operating Model:** target workflow and SOP that converts the intervention into a durable process.
 
-## Design Principles
+The MVP uses synthetic data and deterministic logic. It does not use real Check data, customer data, employer data, employee data, API keys, backend services, or live LLM calls.
 
-- Mock mode only.
-- Synthetic data only.
-- No real Check data, customer data, or confidential employer/employee information.
-- AI-first workflow design, but grounded in deterministic controls for known operational blockers.
-- Built as a practical internal ops tool, not a marketing page.
+## Role Alignment
 
-## How To Run
+This project is designed to mirror the operating responsibilities of a Strategic Initiatives Principal:
 
-Open `index.html` in a browser.
+- Diagnose ambiguous business problems from fragmented operational signal.
+- Build a clear fact base across payroll operations, partner success, product, engineering, and revenue.
+- Separate urgent blockers from systemic root causes.
+- Translate findings into sequenced work with owners, impact, and next actions.
+- Use AI as part of a workflow, not as a side feature.
+- Produce executive-ready recommendations that make the decision and tradeoff clear.
+- Convert repeated operational pain into a scalable operating model.
 
-No dependencies, build step, API key, or backend required.
+## Demo Walkthrough
 
-For a local server:
+Use the top navigation to walk through the operating lifecycle:
 
-```bash
-python3 -m http.server 8080
-```
+- **Command Center:** start with the business problem, trend, root-cause mix, and portfolio-level operating health.
+- **Work Queue:** show how messy signals become classified, owned, prioritized work.
+- **Run Triage:** demonstrate how the workflow protects payroll approval by flagging blockers and warnings before release.
+- **Follow-Up Agent:** ask for a partner-facing update, risk explanation, or first-check guidance.
+- **Strategic Brief:** convert the same source of truth into a concise executive recommendation.
+- **Operating Model:** close with the workflow and SOP that make the fix repeatable.
 
-Then visit:
+## Portfolio Narrative
 
-```text
-http://127.0.0.1:8080
-```
+This prototype demonstrates how I approach strategic operations work: get close to the mechanics, quantify the operational impact, classify the real root causes, sequence accountable work, use AI to accelerate the workflow, and turn the solution into an operating model that can scale beyond individual heroics.
 
-## How I Would Extend This In Production
+## Design Choices
 
-- Replace synthetic data with read-only integrations to payroll previews, support tickets, tax notice intake, onboard statuses, and configuration audit logs.
-- Keep hard approval blockers deterministic and auditable.
-- Use LLMs for narrative-heavy classification, summarization, partner updates, SOP selection, and executive brief generation.
-- Add human-in-the-loop approval for partner communications and workflow changes.
-- Track weekly outcomes through an MBR: blocker rate, manual intervention rate, resolution SLA, tax notice backlog, partner concentration, product defect conversion, and AI-assisted resolution rate.
-- Feed repeated issue patterns back into product, engineering, and partner enablement roadmaps.
+- **Synthetic-data simulation:** safe to share publicly while still reflecting realistic payroll operations patterns.
+- **Static by design:** simple to review, host, and share through GitHub Pages.
+- **Controls-first workflow:** deterministic blockers and warnings keep payroll risk logic auditable.
+- **Executive-first outputs:** the brief and operating model are designed for decision-making, not activity reporting.
+- **Production path is clear:** sample logic can later be connected to payroll previews, support tickets, tax notice intake, onboarding status, and configuration audit logs.
 
-## Suggested Walkthrough
+## GitHub Pages
 
-1. Start on the Command Center and explain the ambiguous business problem.
-2. Open the Work Queue and show how messy signals become owned work.
-3. Open Run Triage and show how the system prevents approval risk before payroll moves.
-4. Ask the mock agent to draft a partner-facing update.
-5. Open the Strategic Brief and explain how the same source of truth becomes an executive recommendation.
-6. End on the Operating Model to show how the fix becomes a durable process.
+This repository is configured for GitHub Pages from the `main` branch root.
 
-## Personal Note To Customize
+No build step is required.
 
-I built this as a fast, synthetic-data simulation of the kind of AI-first operating system I would want when taking on a messy strategic initiative at Check. My background sits at the intersection of operations transformation, AI agents, analytics, people leadership, and 0-to-1 program building, so I wanted the artifact to show how I think and build rather than only describe it.
+## Files
 
-Adam Brett Thompson  
-abthompson1984@gmail.com
+- `index.html` - static app shell.
+- `styles.css` - responsive command center styling.
+- `app.js` - synthetic data, deterministic triage logic, and generated narrative outputs.
+- `submission-note.md` - draft outreach note for sharing the project.
